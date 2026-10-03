@@ -1,0 +1,125 @@
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-section,
+.choice-fieldset {
+  background: #f8fbff;
+  border: 1px solid var(--borda);
+  border-radius: .65rem;
+  min-width: 0;
+}
+
+.form-section {
+  padding: 1.35rem 1.5rem;
+}
+
+.form-section > legend {
+  color: var(--azul-escuro);
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 0 .3rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.form-row + .form-row {
+  border-top: 1px solid #c7d5e5;
+  padding-top: 1rem;
+}
+
+.form-row .field {
+  flex: 1 1 14rem;
+}
+
+.choice-fieldset {
+  flex: 1 1 14rem;
+  padding: .75rem .9rem;
+}
+
+.choice-fieldset legend {
+  padding: 0 .2rem;
+}
+
+.choice-options,
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+}
+
+.choice {
+  align-items: center;
+  display: flex;
+  gap: .35rem;
+}
+
+.choice label,
+.confirmation label {
+  color: var(--texto-suave);
+  font-size: .82rem;
+}
+
+.field-description {
+  flex-basis: 22rem !important;
+}
+
+.affected-services {
+  flex-basis: 15rem;
+}
+
+.checkbox-grid .choice {
+  flex: 1 1 7rem;
+}
+
+.help-text {
+  color: var(--texto-suave);
+  font-size: .73rem;
+}
+
+.confirmation {
+  align-items: center;
+  display: flex;
+  gap: .45rem;
+  margin-top: 1.2rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: .7rem;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 48rem) {
+  .form-section {
+    padding: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .field,
+  .choice-fieldset,
+  .field-description,
+  .affected-services {
+    flex-basis: auto !important;
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .button {
+    width: 100%;
+  }
+}

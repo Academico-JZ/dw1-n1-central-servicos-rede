@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pesquisa e listagem de chamados da Central de Serviços de Rede.">
+    <title>Central de Serviços de Rede | Chamados</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/chamados.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+            <span class="brand-title">Central de Serviços de Rede</span>
+            <span class="brand-description">Registro e acompanhamento de solicitações técnicas</span>
+          </a>
+
+          <nav class="main-nav" aria-label="Navegação principal">
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="chamados.html" aria-current="page">Chamados</a></li>
+              <li><a href="abrir-chamado.html">Abrir chamado</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container page-content">
+        <section aria-labelledby="overview-title">
+          <div class="page-heading">
+            <p class="section-label">Visão geral</p>
+            <h1 id="overview-title">Chamados de suporte</h1>
+            <p>Consulte solicitações registradas e acompanhe o status de cada atendimento.</p>
+          </div>
+
+          <div class="indicator-list" aria-label="Indicadores de chamados">
+            <article class="indicator indicator-aberto">
+              <p>Abertos</p>
+              <strong>3</strong>
+            </article>
+            <article class="indicator indicator-pendente">
+              <p>Pendentes</p>
+              <strong>2</strong>
+            </article>
+            <article class="indicator indicator-concluido">
+              <p>Concluídos</p>
+              <strong>5</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="search-panel" aria-labelledby="search-title">
+          <h2 id="search-title">Pesquisar chamados</h2>
+
+          <form action="chamados.html" method="get">
+            <fieldset class="filter-fields">
+              <legend class="visually-hidden">Filtros de pesquisa</legend>
+              <div class="filter-grid">
+                <div class="field field-keyword">
+                  <label for="palavra-chave">Palavra-chave</label>
+                  <input type="search" id="palavra-chave" name="palavra-chave" placeholder="Internet, roteador ou Wi-Fi">
+                </div>
+
+                <div class="field">
+                  <label for="categoria">Categoria</label>
+                  <select id="categoria" name="categoria">
+                    <option value="">Todas</option>
+                    <option value="rede">Rede</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="software">Software</option>
+                    <option value="seguranca">Segurança</option>
+                    <option value="acesso">Acesso</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="prioridade">Prioridade</label>
+                  <select id="prioridade" name="prioridade">
+                    <option value="">Todas</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="status">Status</label>
+                  <select id="status" name="status">
+                    <option value="">Todos</option>
+                    <option value="aberto">Aberto</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="concluido">Concluído</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="data-inicial">Data inicial</label>
+                  <input type="date" id="data-inicial" name="data-inicial">
+                </div>
+
+                <div class="field">
+                  <label for="data-final">Data final</label>
+                  <input type="date" id="data-final" name="data-final">
+                </div>
+
+                <div class="field">
+                  <label for="horario">Horário</label>
+                  <input type="time" id="horario" name="horario">
+                </div>
+              </div>
+
+              <div class="filter-actions">
+                <button class="button button-primary" type="submit">Pesquisar</button>
+                <a class="button-link" href="chamados.html">Limpar filtros</a>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+
+        <section class="tickets" aria-labelledby="tickets-title">
+          <div class="tickets-heading">
+            <div>
+              <h2 id="tickets-title">Chamados encontrados</h2>
+              <p>Solicitações cadastradas na Central de Serviços</p>
+            </div>
+            <a class="button button-primary" href="abrir-chamado.html">Abrir novo chamado</a>
+          </div>
+
+          <div class="ticket-list">
+            <article class="ticket-card ticket-aberto">
+              <div>
+                <p class="ticket-number">Chamado #001</p>
+                <h3>Laboratório sem acesso à internet</h3>
+                <p class="ticket-details">Rede • Prioridade alta • Maria da Silva • <time datetime="2026-10-02T19:30">02/10/2026 às 19h30</time></p>
+              </div>
+              <span class="status status-aberto">Aberto</span>
+            </article>
+
+            <article class="ticket-card ticket-pendente">
+              <div>
+                <p class="ticket-number">Chamado #002</p>
+                <h3>Atualização do antivírus</h3>
+                <p class="ticket-details">Segurança • Prioridade média • João Pereira • <time datetime="2026-10-01T14:10">01/10/2026 às 14h10</time></p>
+              </div>
+              <span class="status status-pendente">Pendente</span>
+            </article>
+
+            <article class="ticket-card ticket-concluido">
+              <div>
+                <p class="ticket-number">Chamado #003</p>
+                <h3>Instalação de impressora</h3>
+                <p class="ticket-details">Hardware • Prioridade baixa • Ana Souza • <time datetime="2026-09-30T10:20">30/09/2026 às 10h20</time></p>
+              </div>
+              <span class="status status-concluido">Concluído</span>
+            </article>
+
+            <article class="ticket-card ticket-aberto">
+              <div>
+                <p class="ticket-number">Chamado #004</p>
+                <h3>Senha do sistema bloqueada</h3>
+                <p class="ticket-details">Acesso • Prioridade alta • Carlos Lima • <time datetime="2026-09-29T16:45">29/09/2026 às 16h45</time></p>
+              </div>
+              <span class="status status-aberto">Aberto</span>
+            </article>
+
+            <article class="ticket-card ticket-pendente">
+              <div>
+                <p class="ticket-number">Chamado #005</p>
+                <h3>Computador reiniciando sozinho</h3>
+                <p class="ticket-details">Hardware • Prioridade média • Fernanda Alves • <time datetime="2026-09-29T09:15">29/09/2026 às 09h15</time></p>
+              </div>
+              <span class="status status-pendente">Pendente</span>
+            </article>
+
+            <article class="ticket-card ticket-concluido">
+              <div>
+                <p class="ticket-number">Chamado #006</p>
+                <h3>Configuração do Wi-Fi concluída</h3>
+                <p class="ticket-details">Rede • Prioridade baixa • Lucas Martins • <time datetime="2026-09-28T11:05">28/09/2026 às 11h05</time></p>
+              </div>
+              <span class="status status-concluido">Concluído</span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <p>Autoria: Jairuzalon Maguidiel Vieira • Desenvolvimento Web I • IFC</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
